@@ -1,0 +1,17 @@
+{
+  "name": "l2-clicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "get-pixels": "^3.3.3",
+    "ndarray": "^1.0.19",
+    "screenshot-desktop": "^1.15.0",
+    "serialport": "^12.0.0"
+  }
+}
