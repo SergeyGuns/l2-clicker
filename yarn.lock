@@ -98,11 +98,6 @@
     "@serialport/bindings-interface" "1.2.2"
     debug "4.3.4"
 
-"@types/node@>6":
-  version "20.14.0"
-  dependencies:
-    undici-types "~5.26.4"
-
 ajv@^6.12.3:
   version "6.12.6"
   resolved "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
@@ -112,21 +107,6 @@ ajv@^6.12.3:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
-
-ansi-regex@^2.0.0:
-  version "2.1.1"
-
-ansi-regex@^5.0.1:
-  version "5.0.1"
-
-aproba@^1.0.3:
-  version "1.2.0"
-
-are-we-there-yet@~1.1.2:
-  version "1.1.7"
-  dependencies:
-    delegates "^1.0.0"
-    readable-stream "^2.0.6"
 
 asn1@~0.2.3:
   version "0.2.6"
@@ -180,9 +160,6 @@ caseless@~0.12.0:
   resolved "https://registry.npmjs.org/caseless/-/caseless-0.12.0.tgz"
   integrity sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==
 
-code-point-at@^1.0.0:
-  version "1.1.0"
-
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
@@ -194,12 +171,6 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
-
-console-control-strings@^1.0.0, console-control-strings@~1.1.0:
-  version "1.1.0"
-
-core-util-is@~1.0.0:
-  version "1.0.3"
 
 core-util-is@1.0.2:
   version "1.0.2"
@@ -225,14 +196,7 @@ data-uri-to-buffer@0.0.3:
   resolved "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-0.0.3.tgz"
   integrity sha512-Cp+jOa8QJef5nXS5hU7M1DWzXPEIoVR3kbV0dQuVGwROZg8bGf1DcCnkmajBTnvghTtSNMUdRrPjgaT6ZQucbw==
 
-debug@^4.3.3:
-  version "4.3.5"
-  resolved "https://registry.npmjs.org/debug/-/debug-4.3.5.tgz"
-  integrity sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==
-  dependencies:
-    ms "2.1.2"
-
-debug@4.3.4:
+debug@^4.3.3, debug@4.3.4:
   version "4.3.4"
   resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -244,9 +208,6 @@ delayed-stream@~1.0.0:
   resolved "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
 
-delegates@^1.0.0:
-  version "1.0.0"
-
 ecc-jsbn@~0.1.1:
   version "0.1.2"
   resolved "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz"
@@ -254,9 +215,6 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
-
-emoji-regex@^8.0.0:
-  version "8.0.0"
 
 extend@~3.0.2:
   version "3.0.2"
@@ -296,18 +254,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-gauge@~2.7.3:
-  version "2.7.4"
-  dependencies:
-    aproba "^1.0.3"
-    console-control-strings "^1.0.0"
-    has-unicode "^2.0.0"
-    object-assign "^4.1.0"
-    signal-exit "^3.0.0"
-    string-width "^1.0.1"
-    strip-ansi "^3.0.1"
-    wide-align "^1.1.0"
 
 get-pixels@^3.3.3:
   version "3.3.3"
@@ -358,9 +304,6 @@ har-validator@~5.1.3:
     ajv "^6.12.3"
     har-schema "^2.0.0"
 
-has-unicode@^2.0.0:
-  version "2.0.1"
-
 http-signature@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/http-signature/-/http-signature-1.2.0.tgz"
@@ -378,7 +321,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@~2.0.3, inherits@2:
+inherits@2:
   version "2.0.4"
   resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -393,21 +336,10 @@ is-buffer@^1.0.2:
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-fullwidth-code-point@^1.0.0:
-  version "1.0.0"
-  dependencies:
-    number-is-nan "^1.0.0"
-
-is-fullwidth-code-point@^3.0.0:
-  version "3.0.0"
-
 is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/is-typedarray/-/is-typedarray-1.0.0.tgz"
   integrity sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==
-
-isarray@~1.0.0:
-  version "1.0.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -485,14 +417,6 @@ ms@2.1.2:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-nan@^2.13.2, nan@^2.14.0:
-  version "2.19.0"
-
-native-node-utils@^0.2.7:
-  version "0.2.7"
-  dependencies:
-    nan "^2.13.2"
-
 ndarray-pack@^1.1.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/ndarray-pack/-/ndarray-pack-1.2.1.tgz"
@@ -524,24 +448,10 @@ node-gyp-build@4.6.0:
   resolved "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.6.0.tgz"
   integrity sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==
 
-npmlog@^4.1.2:
-  version "4.1.2"
-  dependencies:
-    are-we-there-yet "~1.1.2"
-    console-control-strings "~1.1.0"
-    gauge "~2.7.3"
-    set-blocking "~2.0.0"
-
-number-is-nan@^1.0.0:
-  version "1.0.1"
-
 oauth-sign@~0.9.0:
   version "0.9.0"
   resolved "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.9.0.tgz"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
-
-object-assign@^4.1.0:
-  version "4.1.1"
 
 omggif@^1.0.5:
   version "1.0.10"
@@ -554,23 +464,6 @@ once@^1.3.0:
   integrity sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==
   dependencies:
     wrappy "1"
-
-opencv-build@^0.1.9:
-  version "0.1.9"
-  dependencies:
-    npmlog "^4.1.2"
-
-opencv4nodejs@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.npmjs.org/opencv4nodejs/-/opencv4nodejs-5.6.0.tgz"
-  integrity sha512-JvcT1hb2JUCdntcVABgD9Gprr+gkXBe+jhHKvrr0Ug51y087K4ybm0vHBQVzI2ei1aJxEc9tNknPL9rpyx5Xuw==
-  dependencies:
-    nan "^2.14.0"
-    native-node-utils "^0.2.7"
-    npmlog "^4.1.2"
-    opencv-build "^0.1.9"
-  optionalDependencies:
-    "@types/node" ">6"
 
 parse-data-uri@^0.2.0:
   version "0.2.0"
@@ -594,9 +487,6 @@ pngjs@^3.3.3:
   resolved "https://registry.npmjs.org/pngjs/-/pngjs-3.4.0.tgz"
   integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
 
-process-nextick-args@~2.0.0:
-  version "2.0.1"
-
 psl@^1.1.28:
   version "1.9.0"
   resolved "https://registry.npmjs.org/psl/-/psl-1.9.0.tgz"
@@ -611,17 +501,6 @@ qs@~6.5.2:
   version "6.5.3"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.3.tgz"
   integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
-
-readable-stream@^2.0.6:
-  version "2.3.8"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.3"
-    isarray "~1.0.0"
-    process-nextick-args "~2.0.0"
-    safe-buffer "~5.1.1"
-    string_decoder "~1.1.1"
-    util-deprecate "~1.0.1"
 
 request@^2.44.0:
   version "2.88.2"
@@ -656,8 +535,10 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
-  version "5.1.2"
+safe-buffer@^5.0.1, safe-buffer@^5.1.2:
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
 safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
@@ -691,12 +572,6 @@ serialport@^12.0.0:
     "@serialport/stream" "12.0.0"
     debug "4.3.4"
 
-set-blocking@~2.0.0:
-  version "2.0.0"
-
-signal-exit@^3.0.0:
-  version "3.0.7"
-
 sshpk@^1.7.0:
   version "1.18.0"
   resolved "https://registry.npmjs.org/sshpk/-/sshpk-1.18.0.tgz"
@@ -711,35 +586,6 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
-
-string_decoder@~1.1.1:
-  version "1.1.1"
-  dependencies:
-    safe-buffer "~5.1.0"
-
-string-width@^1.0.1:
-  version "1.0.2"
-  dependencies:
-    code-point-at "^1.0.0"
-    is-fullwidth-code-point "^1.0.0"
-    strip-ansi "^3.0.0"
-
-"string-width@^1.0.2 || 2 || 3 || 4":
-  version "4.2.3"
-  dependencies:
-    emoji-regex "^8.0.0"
-    is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.1"
-
-strip-ansi@^3.0.0, strip-ansi@^3.0.1:
-  version "3.0.1"
-  dependencies:
-    ansi-regex "^2.0.0"
-
-strip-ansi@^6.0.1:
-  version "6.0.1"
-  dependencies:
-    ansi-regex "^5.0.1"
 
 temp@^0.9.4:
   version "0.9.4"
@@ -774,9 +620,6 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-undici-types@~5.26.4:
-  version "5.26.5"
-
 uniq@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz"
@@ -788,9 +631,6 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
-
-util-deprecate@~1.0.1:
-  version "1.0.2"
 
 uuid@^3.3.2:
   version "3.4.0"
@@ -805,11 +645,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-wide-align@^1.1.0:
-  version "1.1.5"
-  dependencies:
-    string-width "^1.0.2 || 2 || 3 || 4"
 
 wrappy@1:
   version "1.0.2"

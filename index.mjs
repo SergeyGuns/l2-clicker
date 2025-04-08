@@ -1,12 +1,13 @@
 import { SerialPort } from "serialport";
 import getTargetHeals from "./getTargetHeals.mjs";
 import getSelfHeals from "./getSelfHeals.mjs";
+import { hasStack } from "./hasStack.mjs";
 // SerialPort.list().then((r) => console.log(r));
 import screenshot from "screenshot-desktop";
 import { castBuff } from "./castBuff.mjs";
 
 const heal = () =>
-  screenshot()
+  screenshot({x: 0, y: 0, width: 800, height: 600})
     .then((imgBuffer) => {
       return Promise.all([getTargetHeals(imgBuffer), getSelfHeals(imgBuffer)]);
     })
@@ -14,7 +15,7 @@ const heal = () =>
       console.error(err);
     });
 
-const port = new SerialPort({ path: "COM7", baudRate: 9600 });
+const port = new SerialPort({ path: "COM4", baudRate: 9600 });
 
 const FLAGS = {
   DELAY: "DELAY",
@@ -23,42 +24,6 @@ const FLAGS = {
 
 const macros = [
   "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "1",
-  "2",
-  "3",
-  "0",
 ];
 
 function delay(timeLong = 1000) {
@@ -86,19 +51,21 @@ async function processArray(array) {
     const [targetHeals, selfHeals] = await heal();
     console.log({ targetHeals, selfHeals });
     console.log(targetHeals, typeof targetHeals);
-    if (targetHeals < 1) {
-      await sendCommand("0");
-      await sendCommand("9");
-      await delay(Math.random() * 100 + 500);
+    hasStack(targetHeals, () => sendCommand("4"))
+    if (targetHeals < 0.3) {
+      await sendCommand("4", 0);
+2      // await delay(Math.random() * 100 + 300);42
       await castBuff(sendCommand);
     }
-    if (selfHeals < 10) {
-      await sendCommand("F");
+    if (selfHeals < 25) {
+      await sendCommand("2", Math.random() * 100 + 200);
     }
     if (item === FLAGS.DELAY) {
-      await delay();
+      await delay(Math.random() * 100 + 300)
     } else {
-      await sendCommand(item);
+      // await sendCommand("0", 0);
+      await sendCommand(item, Math.random() * 100 + 200);
+      
     }
   }
   console.log("All items have been processed");

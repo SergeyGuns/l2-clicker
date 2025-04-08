@@ -1,11 +1,11 @@
 import getPixels from "get-pixels";
 import ndarray from "ndarray";
 // Координаты прямоугольника - левый верхний угол и правый нижний угол
-let rectStart = [26, 852]; // x, y
-let rectEnd = [30, 1203]; // x, y
+let rectStart = [80, 892]; // x, y
+let rectEnd = [90, 1425]; // x, y
 export default (imageBuffer) =>
   new Promise((res) => {
-    getPixels(imageBuffer, "image/jpeg", function (err, pixels) {
+    getPixels(imageBuffer, "image/jpg", function (err, pixels) {
       if (err) {
         console.log("Bad image buffer");
         return;

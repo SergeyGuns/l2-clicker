@@ -2,13 +2,12 @@ const TRASH_HOLD_DELAY = 15 * 1000;
 
 let healsByTime = []; //{heals:number, timestamp: Date.now()}[]
 
-const hasStack = (targetHeals, sendCommand) => {
+const hasStack = (targetHeals, cb) => {
   const currTimestamp = Date.now();
   healsByTime.push({
     heals: Math.round(targetHeals),
     timestamp: currTimestamp,
   });
-  console.log(healsByTime);
   if (currTimestamp - healsByTime[0].timestamp > TRASH_HOLD_DELAY) {
     const isStack = isAllEqual(healsByTime.map((v) => v.heals));
 
@@ -20,7 +19,7 @@ const hasStack = (targetHeals, sendCommand) => {
     console.log("isStack", isStack);
     if (isStack) {
       console.log("stack next target");
-      return sendCommand("0");
+      return cb();
     }
     return Promise.resolve();
   }

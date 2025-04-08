@@ -2,8 +2,9 @@ import getTargetHeals from "./getTargetHeals.mjs";
 import fs from "fs/promises";
 
 const cases = [
-  ["./screen-example/100.jpg", 100],
-  ["./screen-example/0.jpg", 0],
+  ["./screen-example/target 0.png", 0],
+  ["./screen-example/target 47.png", 0],
+  ["./screen-example/target 100.png", 100],
 ];
 
 // Promise-based code
@@ -12,9 +13,9 @@ const cases = [
 
 Promise.all(
   cases.map(([path, heals]) => {
-    return fs.readFile(path).then((fileBuffer) => {
-      getTargetHeals(fileBuffer);
-      console.log(heals);
+    return fs.readFile(path).then(async (fileBuffer) => {
+      const result = await getTargetHeals(fileBuffer);
+      console.log('target', heals, path, result);
     });
   })
 ).then();
