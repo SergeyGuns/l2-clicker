@@ -1,8 +1,9 @@
 import getPixels from "get-pixels";
 import ndarray from "ndarray";
+import * as dotenv from "dotenv";
+dotenv.config();
+const { rectStart, rectEnd } = JSON.parse(process.env.SELF_HEALTH_RECT);
 // Координаты прямоугольника - левый верхний угол и правый нижний угол
-let rectStart = [105, 32]; // x, y
-let rectEnd =   [116,260]; // x, y
 export default (imageBuffer) =>
   new Promise((res) => {
     getPixels(imageBuffer, "image/jpg", function (err, pixels) {

@@ -7,7 +7,7 @@ import screenshot from "screenshot-desktop";
 import { castBuff } from "./castBuff.mjs";
 
 const heal = () =>
-  screenshot({x: 0, y: 0, width: 800, height: 600})
+  screenshot({ x: 0, y: 0, width: 800, height: 600 })
     .then((imgBuffer) => {
       return Promise.all([getTargetHeals(imgBuffer), getSelfHeals(imgBuffer)]);
     })
@@ -17,14 +17,15 @@ const heal = () =>
 
 const port = new SerialPort({ path: "COM4", baudRate: 9600 });
 
+const ATTACK = "1";
+const HEAL_ATTACK = "2";
+const NEXT_TARGET = "4";
 const FLAGS = {
   DELAY: "DELAY",
   PAUSE: "PAUSE",
 };
 
-const macros = [
-  "1",
-];
+const macros = ["1"];
 
 function delay(timeLong = 1000) {
   return new Promise((resolve) => {
@@ -34,41 +35,50 @@ function delay(timeLong = 1000) {
   });
 }
 
-function sendCommand(command, delay = 0) {
-  return new Promise((resolve) => {
-    port.write(command, function (err) {
-      if (err) {
-        return console.log("Ошибка отправки данных: ", err.message);
-      }
-      setTimeout(() => resolve(), delay);
-      console.log("Данные успешно отправлены: " + command);
+const sendKey = (COMMAND_PREFIX = "") =>
+  function (key, delay = 0) {
+    return new Promise((resolve) => {
+      port.write(COMMAND_PREFIX + key + "\n", function (err) {
+        if (err) {
+          return console.log("Ошибка отправки данных: ", err.message);
+        }
+        setTimeout(() => resolve(), delay);
+        console.log("Данные успешно отправлены: " + key);
+      });
     });
-  });
-}
+  };
 
+let lastPressKey = null;
+const pressKey = sendKey("P_");
+const releaseKey = sendKey("R_");
+const sendCommand = sendKey();
 async function processArray(array) {
   for (const item of array) {
     const [targetHeals, selfHeals] = await heal();
     console.log({ targetHeals, selfHeals });
-    console.log(targetHeals, typeof targetHeals);
-    hasStack(targetHeals, () => sendCommand("4"))
+    if (lastPressKey) {
+      await releaseKey(lastPressKey);
+      lastPressKey = null;
+    }
+
+    await hasStack(targetHeals, () => sendCommand(NEXT_TARGET));
+    await castBuff(sendCommand);
+
+    // combat logic
     if (targetHeals < 0.3) {
-      await sendCommand("4", 0);
-2      // await delay(Math.random() * 100 + 300);42
-      await castBuff(sendCommand);
+      // send next target command
+      await sendCommand(NEXT_TARGET, 0);
     }
-    if (selfHeals < 25) {
-      await sendCommand("2", Math.random() * 100 + 200);
-    }
-    if (item === FLAGS.DELAY) {
-      await delay(Math.random() * 100 + 300)
+    if (selfHeals < 35) {
+      // heal attack command
+      await pressKey(HEAL_ATTACK);
+      lastPressKey = HEAL_ATTACK;
     } else {
-      // await sendCommand("0", 0);
-      await sendCommand(item, Math.random() * 100 + 200);
-      
+      // typical attack command
+      await pressKey(ATTACK);
+      lastPressKey = ATTACK;
     }
   }
-  console.log("All items have been processed");
   await processArray(array);
 }
 

@@ -9,9 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "desktop-screenshot": "^0.1.1",
+    "dotenv": "^16.5.0",
+    "edge-js": "^23.1.5",
     "get-pixels": "^3.3.3",
     "ndarray": "^1.0.19",
+    "robotjs": "^0.6.0",
     "screenshot-desktop": "^1.15.0",
-    "serialport": "^12.0.0"
+    "serialport": "^12.0.0",
+    "windows-ss": "^1.0.1-xx"
   }
 }
