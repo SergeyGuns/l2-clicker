@@ -5,12 +5,14 @@ const buffPull = [
   // ["E", 0],
   // ["r", 0],
   // ["T", 0],
-  // ["8", 0],
+  ["5", 0],
+  ["6", 0],
+  ["7", 0],
+  ["8", 0],
   // ["4", 0],
 ];
 const songPull = [
-  ["7", 0],
-  // ["6", 0],
+  ["9", 0],
   // ["Y", 0],
   // ["U", 0],
   // ["I", 0],
@@ -19,7 +21,9 @@ const songPull = [
   // ["A", 0],
   // ["S", 0],
 ];
-const cow = [["5", 0]];
+const cow = [
+  // ["5", 0]
+];
 
 export const castBuff = (sendCommand) => {
   for (let index = 0; index < buffPull.length; index++) {
